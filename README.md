@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/5aa36739-76c8-4a34-9a9b-7e9272927f22)
+![Mechaura Logo](/logo.png)
 
 # MechAura
 
