@@ -1,7 +1,7 @@
 [package]
-name = "mechvibes-dx"
+name = "mechaura"
 version = "0.4.0"
-authors = ["Hải Nguyễn <hainguyen.ts13@gmail.com>"]
+authors = ["Mukul Sharma <mukulsharma0480259@gmail.com>"]
 edition = "2024"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

@@ -11,8 +11,8 @@ use tokio::sync::Mutex;
 use tokio::time::{ interval, Duration as TokioDuration };
 
 // Fixed repository information
-const REPO_OWNER: &str = "hainguyents13";
-const REPO_NAME: &str = "mechvibes-dx";
+const REPO_OWNER: &str = "mukul9897";
+const REPO_NAME: &str = "MechAura";
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct UpdateInfo {
@@ -390,7 +390,7 @@ impl UpdateService {
     //         println!("📥 Downloading update...");
 
     //         let temp_dir = std::env::temp_dir();
-    //         let default_filename = format!("mechvibes_dx_v{}.exe", update_info.latest_version);
+    //         let default_filename = format!("mmechaura_v{}.exe", update_info.latest_version);
     //         let filename = download_url.split('/').last().unwrap_or(&default_filename);
     //         let installer_path = temp_dir.join(filename);
 

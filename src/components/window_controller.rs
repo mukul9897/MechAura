@@ -109,7 +109,7 @@ pub fn WindowController() -> Element {
                             }
                         }
                         TrayMessage::OpenGitHub => {
-                            let url = "https://github.com/hainguyents13/mechvibes-dx";
+                            let url = "https://github.com/mukul9897/MechAura";
                             if let Err(e) = open::that(url) {
                                 always_eprint!("❌ Failed to open GitHub URL: {}", e);
                             } else {
@@ -117,7 +117,7 @@ pub fn WindowController() -> Element {
                             }
                         }
                         TrayMessage::OpenDiscord => {
-                            let url = "https://discord.com/invite/MMVrhWxa4w";
+                            let url = "https://discord.gg/KnXm725v";
                             if let Err(e) = open::that(url) {
                                 eprintln!("❌ Failed to open Discord URL: {}", e);
                             } else {
@@ -125,7 +125,7 @@ pub fn WindowController() -> Element {
                             }
                         }
                         TrayMessage::OpenWebsite => {
-                            let url = "https://mechvibes.com";
+                            let url = "https://github.com/mukul9897/MechAura";
                             if let Err(e) = open::that(url) {
                                 eprintln!("❌ Failed to open website URL: {}", e);
                             } else {

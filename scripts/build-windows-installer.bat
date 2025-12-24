@@ -1,12 +1,12 @@
 @echo off
-REM MechvibesDX Windows Installer Build Script (Batch version)
+REM MechAura Windows Installer Build Script (Batch version)
 REM This script builds the release binary and creates a Windows installer
 
 REM Change to project root directory (parent of scripts folder)
 cd /d "%~dp0\.."
 
 echo ========================================
-echo MechvibesDX Windows Installer Builder
+echo MechAura Windows Installer Builder
 echo ========================================
 echo.
 echo Working directory: %CD%
@@ -70,7 +70,7 @@ if "%ISCC%"=="" (
 )
 
 echo Found Inno Setup: %ISCC%
-"%ISCC%" installer\windows\mechvibes-dx-setup.iss
+"%ISCC%" installer\windows\mechaura-setup.iss
 
 if %ERRORLEVEL% NEQ 0 (
     echo ERROR: Inno Setup compilation failed

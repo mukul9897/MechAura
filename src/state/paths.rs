@@ -3,8 +3,8 @@
 /// ## Path Structure
 /// - `data/` - Application data and configuration files (relative to app root)
 /// - `soundpacks/` - Built-in soundpack directories (relative to app root)
-/// - Custom soundpacks - Stored in system app data directory (e.g., %APPDATA%/Mechvibes/soundpacks)
-/// - Custom images - Stored in system app data directory (e.g., %APPDATA%/Mechvibes/custom_images)
+/// - Custom soundpacks - Stored in system app data directory (e.g., %APPDATA%/mechaura/soundpacks)
+/// - Custom images - Stored in system app data directory (e.g., %APPDATA%/mechaura/custom_images)
 ///
 /// All paths are relative to the application executable directory unless specified otherwise.
 use std::path::PathBuf;
@@ -39,34 +39,34 @@ fn get_app_root() -> &'static PathBuf {
     })
 }
 
-/// Get the system app data directory for Mechvibes
+/// Get the system app data directory for mechaura
 /// Returns platform-specific app data directory:
-/// - Windows: %APPDATA%/Mechvibes
-/// - macOS: ~/Library/Application Support/Mechvibes
-/// - Linux: ~/.local/share/mechvibes
+/// - Windows: %APPDATA%/mechaura
+/// - macOS: ~/Library/Application Support/mechaura
+/// - Linux: ~/.local/share/mechaura
 fn get_system_app_data_dir() -> PathBuf {
     use directories::BaseDirs;
 
     if let Some(base_dirs) = BaseDirs::new() {
         #[cfg(target_os = "windows")]
         {
-            // Windows: %APPDATA%/Mechvibes
-            base_dirs.data_dir().join("Mechvibes")
+            // Windows: %APPDATA%/mechaura
+            base_dirs.data_dir().join("mechaura")
         }
         #[cfg(target_os = "macos")]
         {
-            // macOS: ~/Library/Application Support/Mechvibes
-            base_dirs.data_dir().join("Mechvibes")
+            // macOS: ~/Library/Application Support/mechaura
+            base_dirs.data_dir().join("mechaura")
         }
         #[cfg(target_os = "linux")]
         {
-            // Linux: ~/.local/share/mechvibes
-            base_dirs.data_dir().join("mechvibes")
+            // Linux: ~/.local/share/mechaura
+            base_dirs.data_dir().join("mechaura")
         }
         #[cfg(not(any(target_os = "windows", target_os = "macos", target_os = "linux")))]
         {
             // Other Unix-like systems
-            base_dirs.data_dir().join("mechvibes")
+            base_dirs.data_dir().join("mechaura")
         }
     } else {
         // Fallback to app root if system directories not available
@@ -100,7 +100,7 @@ pub mod data {
     }
 
     /// Custom images directory for user-uploaded images
-    /// Uses system app data directory (e.g., %APPDATA%/Mechvibes/custom_images on Windows)
+    /// Uses system app data directory (e.g., %APPDATA%/mechaura/custom_images on Windows)
     pub fn custom_images_dir() -> PathBuf {
         get_system_app_data_dir().join("custom_images")
     }

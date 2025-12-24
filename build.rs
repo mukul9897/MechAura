@@ -10,10 +10,10 @@ fn main() -> io::Result<()> {
         res.set_icon("assets/icon.ico");
 
         // Set application metadata
-        res.set("ProductName", "MechvibesDX");
-        res.set("FileDescription", "MechvibesDX - Interactive Sound Simulator");
-        res.set("CompanyName", "Hai Nguyen");
-        res.set("LegalCopyright", "Copyright (C) 2026 Hai Nguyen");
+        res.set("ProductName", "MechAura");
+        res.set("FileDescription", "MechAura - Interactive Sound Simulator");
+        res.set("CompanyName", "Mukul9897");
+        res.set("LegalCopyright", "Copyright (C) 2026 Mukul Sharma");
 
         // Compile the resource file
         res.compile()?;

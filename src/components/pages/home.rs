@@ -102,7 +102,7 @@ pub fn HomePage(audio_ctx: Arc<AudioContext>) -> Element {
     rsx! {
       div { class: "flex flex-col gap-10 px-3 pb-0",
         div { class: "mb-2 mt-4",
-          // Mechvibes logo with animated press effect
+          // MechAura logo with animated press effect
           Logo {}
         }
         // Main content for home page
@@ -139,15 +139,15 @@ pub fn HomePage(audio_ctx: Arc<AudioContext>) -> Element {
               Heart { class: "inline w-3.5 h-3.5 -mt-1 text-primary/70 fill-primary/30" }
               span { " by " }
               a {
-                href: "https://github.com/hainguyents13/mechvibes-dx",
+                href: "https://github.com/mukul9897/MechAura",
                 target: "_blank",
                 class: "link ",
-                "hainguyents13"
+                "mukul9897"
               }
               br {}
               " and "
               a {
-                href: "https://github.com/hainguyents13/mechvibes-dx/graphs/contributors",
+                href: "https://github.com/mukul9897/MechAura/graphs/contributors",
                 target: "_blank",
                 class: "link ",
                 "these awesome people"

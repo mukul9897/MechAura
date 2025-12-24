@@ -40,7 +40,7 @@ pub fn app() -> Element {
     // Provide the keyboard state context to all child components
     use_context_provider(|| keyboard_state);
 
-    // Initialize the audio system for mechvibes sounds - moved here to be accessible by both keyboard processing and UI
+    // Initialize the audio system for mechaura sounds - moved here to be accessible by both keyboard processing and UI
     let audio_context = use_hook(|| Arc::new(AudioContext::new()));
 
     // Provide audio context to all child components (this will be used by Layout and other components)

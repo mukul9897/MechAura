@@ -1,4 +1,4 @@
-# MechvibesDX Windows Installer Build Script
+# MechAura Windows Installer Build Script
 # This script builds the release binary and creates a Windows installer using Inno Setup
 
 param(
@@ -10,7 +10,7 @@ param(
 $ErrorActionPreference = "Stop"
 
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "MechvibesDX Windows Installer Builder" -ForegroundColor Cyan
+Write-Host "MechAura Windows Installer Builder" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -53,7 +53,7 @@ if (-not $SkipBuild) {
 }
 
 # Check if executable exists
-$ExePath = Join-Path $ProjectRoot "target\release\mechvibes-dx.exe"
+$ExePath = Join-Path $ProjectRoot "target\release\mechaura.exe"
 if (-not (Test-Path $ExePath)) {
     Write-Host "ERROR: Executable not found at $ExePath" -ForegroundColor Red
     Write-Host "Please run without -SkipBuild flag" -ForegroundColor Red
@@ -103,7 +103,7 @@ if ($UseInnoSetup) {
     
     Write-Host "Found Inno Setup: $ISCC" -ForegroundColor Gray
     
-    $InnoScript = Join-Path $ProjectRoot "installer\windows\mechvibes-dx-setup.iss"
+    $InnoScript = Join-Path $ProjectRoot "installer\windows\mechaura-setup.iss"
     if (-not (Test-Path $InnoScript)) {
         Write-Host "ERROR: Inno Setup script not found at $InnoScript" -ForegroundColor Red
         exit 1
@@ -150,7 +150,7 @@ Write-Host "Executable: $ExePath" -ForegroundColor Gray
 Write-Host "Output directory: $DistDir" -ForegroundColor Gray
 
 if ($UseInnoSetup) {
-    $InstallerPath = Get-ChildItem -Path $DistDir -Filter "MechvibesDX-*-Setup.exe" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+    $InstallerPath = Get-ChildItem -Path $DistDir -Filter "MechAura-*-Setup.exe" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
     if ($InstallerPath) {
         Write-Host "Installer: $($InstallerPath.FullName)" -ForegroundColor Gray
         Write-Host ""

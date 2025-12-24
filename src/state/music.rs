@@ -196,7 +196,7 @@ impl MusicCache {
     /// Fetch fresh music data from API and update timestamp in config
     pub async fn fetch_and_update() -> Result<Self, String> {
         println!("🎵 Fetching fresh music data from API...");
-        let _music_api_url = "https://mechvibes-music-stream.vercel.app/music";
+        let _music_api_url = "https://github.com/mukul9897/MechAura";
 
         // For now, we'll use built-in tracks since we can't make HTTP requests in this context
         // In a real implementation, you would use reqwest or similar HTTP client

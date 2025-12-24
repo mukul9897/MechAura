@@ -1,4 +1,4 @@
-# MechvibesDX Installer
+# MechAura Installer
 
 This directory contains installer configurations for different platforms.
 
@@ -49,7 +49,7 @@ Then choose installer type when prompted.
 
 2. For Inno Setup:
    ```cmd
-   "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer\windows\mechvibes-dx-setup.iss
+   "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer\windows\MechAura-setup.iss
    ```
 
 3. For NSIS:
@@ -74,19 +74,19 @@ The Windows installer includes:
 
 Installers are created in the `dist` folder:
 
-- **Inno Setup**: `dist/MechvibesDX-{version}-Setup.exe`
-- **NSIS**: `bundle/nsis/MechvibesDX_{version}_x64-setup.exe`
+- **Inno Setup**: `dist/MechAura-{version}-Setup.exe`
+- **NSIS**: `bundle/nsis/MechAura_{version}_x64-setup.exe`
 
 ### Installer Configuration
 
 #### Inno Setup
 
-Configuration file: `installer/windows/mechvibes-dx-setup.iss`
+Configuration file: `installer/windows/MechAura-dx-setup.iss`
 
 Key settings:
 - App ID: Unique identifier for the application
-- Install location: `%ProgramFiles%\MechvibesDX`
-- User data: `%APPDATA%\Mechvibes`
+- Install location: `%ProgramFiles%\MechAura`
+- User data: `%APPDATA%\MechAura`
 - Compression: LZMA2 (maximum)
 - Privileges: User-level (no admin required)
 
@@ -127,7 +127,7 @@ Install Inno Setup from https://jrsoftware.org/isinfo.php
 
 ### Installer doesn't include all files
 
-Check the `[Files]` section in `mechvibes-dx-setup.iss` and ensure all necessary files are listed.
+Check the `[Files]` section in `MechAura-dx-setup.iss` and ensure all necessary files are listed.
 
 ## Future Enhancements
 

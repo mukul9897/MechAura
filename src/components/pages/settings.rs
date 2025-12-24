@@ -313,7 +313,7 @@ pub fn SettingsPage() -> Element {
                             }
                           }
                           a {
-                            href: "https://github.com/hainguyents13/mechvibes-dx/releases/tag/v{available_version}",
+                            href: "https://github.com/mukul9897/MechAura/releases/tag/v{available_version}",
                             target: "_blank",
                             class: "link link-secondary",
                             "View Release Notes"

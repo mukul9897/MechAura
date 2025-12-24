@@ -1,11 +1,11 @@
-; MechvibesDX Inno Setup Script
+; MechAura Inno Setup Script
 ; Requires Inno Setup 6.0 or later: https://jrsoftware.org/isinfo.php
 
-#define MyAppName "MechvibesDX"
+#define MyAppName "MechAura"
 #define MyAppVersion "0.4.0"
 #define MyAppPublisher "Hai Nguyen"
-#define MyAppURL "https://github.com/hainguyents13/mechvibes-dx"
-#define MyAppExeName "mechvibes-dx.exe"
+#define MyAppURL "https://github.com/mukul9897/MechAura"
+#define MyAppExeName "mechaura.exe"
 #define MyAppId "{{8B5F5E5E-5E5E-5E5E-5E5E-5E5E5E5E5E5E}"
 
 [Setup]
@@ -22,7 +22,7 @@ DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
 ; LicenseFile=..\..\LICENSE
 OutputDir=..\..\dist
-OutputBaseFilename=MechvibesDX-{#MyAppVersion}-Setup
+OutputBaseFilename=MechAura-{#MyAppVersion}-Setup
 SetupIconFile=..\..\assets\icon.ico
 Compression=lzma2/max
 SolidCompression=yes
@@ -72,7 +72,7 @@ Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#MyAppName}}
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{localappdata}\{#MyAppName}"
-Type: filesandordirs; Name: "{userappdata}\Mechvibes"
+Type: filesandordirs; Name: "{userappdata}\MechAura"
 
 [Code]
 function InitializeSetup(): Boolean;
@@ -92,8 +92,8 @@ begin
   if CurStep = ssPostInstall then
   begin
     // Create custom soundpacks directory in AppData
-    CreateDir(ExpandConstant('{userappdata}\Mechvibes\soundpacks\keyboard'));
-    CreateDir(ExpandConstant('{userappdata}\Mechvibes\soundpacks\mouse'));
+    CreateDir(ExpandConstant('{userappdata}\MechAura\soundpacks\keyboard'));
+    CreateDir(ExpandConstant('{userappdata}\MechAura\soundpacks\mouse'));
 
     // Force Windows to refresh icon cache
     RefreshIconCache();
@@ -108,7 +108,7 @@ begin
   begin
     if MsgBox('Do you want to remove all user data including custom soundpacks and settings?', mbConfirmation, MB_YESNO) = IDYES then
     begin
-      DelTree(ExpandConstant('{userappdata}\Mechvibes'), True, True, True);
+      DelTree(ExpandConstant('{userappdata}\MechAura'), True, True, True);
     end;
   end;
 end;

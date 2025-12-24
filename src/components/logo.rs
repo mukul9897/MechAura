@@ -98,6 +98,6 @@ pub fn Logo() -> Element {
     };
 
     rsx! {
-      div { class: "{final_class}", style: "{dynamic_style}", "Mechvibes" }
+      div { class: "{final_class}", style: "{dynamic_style}", "MechAura" }
     }
 }

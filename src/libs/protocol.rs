@@ -3,7 +3,7 @@ use std::process::Command;
 use crate::utils::constants::{ APP_PROTOCOL, APP_PROTOCOL_URL, APP_NAME, APP_NAME_LOWERCASE };
 
 #[allow(dead_code)]
-/// Register the mechvibes:// protocol for the application
+/// Register the mechaura:// protocol for the application
 #[cfg(target_os = "windows")]
 pub fn register_protocol() -> Result<(), Box<dyn std::error::Error>> {
     let exe_path = env::current_exe()?;
