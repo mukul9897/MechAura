@@ -36,6 +36,13 @@ REM Create dist directory
 echo [2/3] Preparing output directory...
 if not exist "dist" mkdir dist
 echo Output directory ready
+
+REM Ensure data directory exists and is not empty
+if not exist "data" mkdir data
+dir /b /a "data" | findstr . >nul || (
+    echo Creating placeholder in data directory...
+    echo. > data\.placeholder
+)
 echo.
 
 REM Build installer
@@ -110,4 +117,3 @@ echo ========================================
 echo.
 echo Check the 'dist' or 'bundle' folder for the installer
 pause
-

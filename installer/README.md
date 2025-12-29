@@ -50,7 +50,7 @@ Then choose installer type when prompted.
 
 2. For Inno Setup:
    ```cmd
-   "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer\windows\MechAura-setup.iss
+   "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer\windows\mechaura-setup.iss
    ```
 
 3. For NSIS:
@@ -82,7 +82,7 @@ Installers are created in the `dist` folder:
 
 #### Inno Setup
 
-Configuration file: `installer/windows/MechAura-dx-setup.iss`
+Configuration file: `installer/windows/mechaura-setup.iss`
 
 Key settings:
 - App ID: Unique identifier for the application

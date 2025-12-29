@@ -74,6 +74,18 @@ if (-not (Test-Path $DistDir)) {
 Write-Host "[OK] Output directory ready: $DistDir" -ForegroundColor Green
 Write-Host ""
 
+# Step 2.5: Verify data directory exists (required by Inno Setup script)
+$DataDir = Join-Path $ProjectRoot "data"
+if (-not (Test-Path $DataDir)) {
+    Write-Host "Creating missing data directory: $DataDir" -ForegroundColor Yellow
+    New-Item -ItemType Directory -Path $DataDir | Out-Null
+}
+
+if ((Get-ChildItem -Path $DataDir).Count -eq 0) {
+    Write-Host "WARNING: Data directory is empty. Creating a placeholder to prevent Inno Setup failure." -ForegroundColor Yellow
+    New-Item -ItemType File -Path (Join-Path $DataDir ".placeholder") -Force | Out-Null
+}
+
 # Step 3: Build installer based on selected method
 if ($UseInnoSetup) {
     Write-Host "[3/4] Building Inno Setup installer..." -ForegroundColor Yellow

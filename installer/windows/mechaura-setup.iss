@@ -3,7 +3,7 @@
 
 #define MyAppName "MechAura"
 #define MyAppVersion "0.4.0"
-#define MyAppPublisher "Hai Nguyen"
+#define MyAppPublisher "Mukul Sharma"
 #define MyAppURL "https://github.com/mukul9897/MechAura"
 #define MyAppExeName "mechaura.exe"
 #define MyAppId "{{8B5F5E5E-5E5E-5E5E-5E5E-5E5E5E5E5E5E}"
