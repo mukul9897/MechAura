@@ -45,7 +45,7 @@ if (-not $SkipBuild) {
         exit 1
     }
     
-    Write-Host "✓ Build completed successfully" -ForegroundColor Green
+    Write-Host "[OK] Build completed successfully" -ForegroundColor Green
     Write-Host ""
 } else {
     Write-Host "[1/4] Skipping build (using existing binary)" -ForegroundColor Yellow
@@ -71,7 +71,7 @@ $DistDir = Join-Path $ProjectRoot "dist"
 if (-not (Test-Path $DistDir)) {
     New-Item -ItemType Directory -Path $DistDir | Out-Null
 }
-Write-Host "✓ Output directory ready: $DistDir" -ForegroundColor Green
+Write-Host "[OK] Output directory ready: $DistDir" -ForegroundColor Green
 Write-Host ""
 
 # Step 3: Build installer based on selected method
@@ -117,7 +117,7 @@ if ($UseInnoSetup) {
         exit 1
     }
     
-    Write-Host "✓ Inno Setup installer created successfully" -ForegroundColor Green
+    Write-Host "[OK] Inno Setup installer created successfully" -ForegroundColor Green
     Write-Host ""
 }
 
@@ -139,7 +139,7 @@ if ($UseNSIS) {
         exit 1
     }
     
-    Write-Host "✓ NSIS installer created successfully" -ForegroundColor Green
+    Write-Host "[OK] NSIS installer created successfully" -ForegroundColor Green
     Write-Host ""
 }
 
@@ -150,11 +150,11 @@ Write-Host "Executable: $ExePath" -ForegroundColor Gray
 Write-Host "Output directory: $DistDir" -ForegroundColor Gray
 
 if ($UseInnoSetup) {
-    $InstallerPath = Get-ChildItem -Path $DistDir -Filter "MechAura-*-Setup.exe" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+    $InstallerPath = Get-ChildItem -Path $DistDir -Filter "mechaura-*-Setup.exe" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
     if ($InstallerPath) {
         Write-Host "Installer: $($InstallerPath.FullName)" -ForegroundColor Gray
         Write-Host ""
-        Write-Host "✓ Installer ready!" -ForegroundColor Green
+        Write-Host "[OK] Installer ready!" -ForegroundColor Green
     }
 }
 
@@ -162,4 +162,3 @@ Write-Host ""
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "Build completed successfully!" -ForegroundColor Green
 Write-Host "========================================" -ForegroundColor Cyan
-

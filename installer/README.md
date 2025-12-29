@@ -14,6 +14,7 @@ Choose one of the following installer builders:
    - Free and open source
 
 2. **NSIS** (via Dioxus bundler)
+   - Requires CMake (for building CLI dependencies): `winget install kitware.cmake`
    - Requires Dioxus CLI: `cargo install dioxus-cli`
    - Configuration in `Dioxus.toml`
 
@@ -138,4 +139,3 @@ Check the `[Files]` section in `MechAura-dx-setup.iss` and ensure all necessary 
 - [ ] Multi-language support
 - [ ] macOS DMG installer
 - [ ] Linux AppImage/Flatpak
-
